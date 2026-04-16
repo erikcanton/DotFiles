@@ -37,6 +37,31 @@ dap.adapters.lldb = {
     },
 }
 
+dap.adapters.cpp = {
+  type = 'executable',
+  command = 'codelldb', -- or 'cppdbg', 'gdb', etc.
+  env = { LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY = "YES" },
+  name = "lldb"
+}
+
+dap.configurations.cpp = {
+  {
+    name = "Launch",
+    type = "lldb",
+    request = "launch",
+    program = function()
+      -- Prompt for the executable path
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    args = {},
+    stopOnEntry = true, -- Optional: stop at the beginning of the program
+    externalConsole = false, -- Optional: run in Neovim's built-in terminal
+  },
+}
+-- Use the same configurations for C files
+dap.configurations.c = dap.configurations.cpp
+
 dapui.setup()
 
 -- Open dapui when a debug session is launched or attached

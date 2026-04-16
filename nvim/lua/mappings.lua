@@ -29,3 +29,6 @@ map("n", "<F5>", ":CMakeRun<CR>", { silent = true })
 map("n", "<F6>", ":CMakeBuild<CR>", { silent = true })
 map("n", "<F7>", ":CMakeGenerate<CR>", { silent = true })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- copilot
+map("n", "<C-y>", function() require("cmp").mapping.confirm({ select = true }) end, { desc = "Accept cmp suggestion" })

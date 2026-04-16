@@ -54,6 +54,11 @@ return {
         suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
         -- log_level = 'debug',
       }
+  },
+  {
+    'github/copilot.vim',
+    lazy = false,
+    opts = {}
   }
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
