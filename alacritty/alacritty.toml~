@@ -1,6 +1,6 @@
 
 general.import = [
-  "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+  "~/.config/alacritty/themes/kanagawa_dragon.toml"
 ]
 general.live_config_reload = true
 
@@ -8,4 +8,7 @@ general.live_config_reload = true
 size = 14.0
 
 [font.normal]
-family = Cascadia Code NF
+family = "CaskaydiaCove Nerd Font Mono"
+
+[window]
+opacity = 0.8
