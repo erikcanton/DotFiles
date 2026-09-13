@@ -11,6 +11,14 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.opt.formatoptions:remove({ "r", "o" }) -- don't continue comments when pressing enter
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "r", "o" })
+  end,
+})
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins
